@@ -23,3 +23,13 @@
     ```
 
 6. Open your Inbox then verify
+
+### Image Screenshot
+
+Send Email
+
+![Send Email](img/register.png "Send Email")
+
+Mailbox
+
+![Send Email](img/inbox.png "Send Email")
