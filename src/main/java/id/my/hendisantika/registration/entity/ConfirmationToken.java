@@ -55,4 +55,7 @@ public class ConfirmationToken {
         confirmationToken = UUID.randomUUID().toString();
     }
 
+    public User getUserEntity() {
+        return user;
+    }
 }

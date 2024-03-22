@@ -56,4 +56,16 @@ public class UserService {
 
         return ResponseEntity.ok("Verify email by the link sent on your email address");
     }
+
+    public ResponseEntity<?> confirmEmail(String confirmationToken) {
+        ConfirmationToken token = confirmationTokenRepository.findByConfirmationToken(confirmationToken);
+
+        if (token != null) {
+            User user = userRepository.findByUserEmailIgnoreCase(token.getUserEntity().getUserEmail());
+            user.setEnabled(true);
+            userRepository.save(user);
+            return ResponseEntity.ok("Email verified successfully!");
+        }
+        return ResponseEntity.badRequest().body("Error: Couldn't verify email");
+    }
 }
