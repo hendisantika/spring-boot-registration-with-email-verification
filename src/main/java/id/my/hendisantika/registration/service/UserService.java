@@ -49,7 +49,7 @@ public class UserService {
         mailMessage.setFrom("Testing <no-reply@jvm.my.id>");
         mailMessage.setSubject("Complete Registration!");
         mailMessage.setText("To confirm your account, please click here : "
-                + "http://localhost:8085/confirm-account?token=" + confirmationToken.getConfirmationToken());
+                + "http://localhost:8085/users/confirm-account?token=" + confirmationToken.getConfirmationToken());
         emailService.sendEmail(mailMessage);
 
         log.info("Confirmation Token: " + confirmationToken.getConfirmationToken());
